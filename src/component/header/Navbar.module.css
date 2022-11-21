@@ -1,0 +1,102 @@
+.Navbar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    height: max-content;
+    margin-top: 2rem;
+}
+.Navbar .Logo {
+    grid-column: 1/span 1;
+}
+
+a {
+    text-decoration: none;
+    color: #4F5665;
+}
+a:visited {
+    color: #4F5665;
+}
+
+.Navbar .mainNav {
+    grid-column: 2/span 5;
+    grid-row: 1/span 1;
+    justify-self: center;
+}
+.Navbar .remNav {
+    grid-column: 6/ -1;
+    grid-row: 1/span 1;
+    justify-self: end;
+}
+
+.Navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+.Navbar ul li{
+    display: inline-block;
+    margin-left: 3rem;
+    font-weight: 400;
+}
+
+.Navbar .col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navbar .col .btn {
+    padding: .5rem 2rem;
+    border: transparent;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.Navbar .col .btn:hover {
+    transform: scale(1) translateY(0);
+}
+.Navbar .col .btn.active {
+    border: 1px solid #F58383;
+    box-shadow: 1px 1px .5px .6px #f5383828;
+}
+
+.Navbar .col .btn:not(:last-of-type) {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 71.875rem) {
+    .Navbar {
+        grid-row-gap: 1rem;
+    }
+    .Navbar .Logo {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+    .Navbar .mainNav {
+        grid-column: 1/span 4;
+        grid-row: 2/span 1;
+        justify-self: start;
+    }
+    .Navbar .remNav {
+        grid-column: 5/ -1;
+        grid-row: 2/span 1;
+        justify-self: end;
+    }
+    .Navbar ul li {
+        margin-left: 0;
+    }
+    .Navbar ul li:not(:last-of-type) {
+        margin-right: 3rem;
+    }
+}
+
+@media screen and (max-width: 56.25rem) {
+    .Navbar .mainNav {
+        display: none;
+    }
+    .Navbar .remNav {
+        display: none;
+    }
+}
